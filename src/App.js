@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import './App.css';
 import Alert from './components/Alert';
 import Navbar from './components/Navbar';
-import About from './components/About';
+// import About from './components/About';
 import TextForm from './components/TextForm';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -41,20 +40,20 @@ function App() {
 
   return (
     <>
-      <Router>
-        <Navbar navTitle="TextUtils" mode={mode} toggleMode={toggleMode} disabledLink="Disabled Link" />
-        <div className="container">
-          <Alert alert={alert} />
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/">
-              <TextForm heading="This is the heading" showAlert={showAlert} mode={mode} />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
+      {/* <Router> */}
+      <Navbar navTitle="TextUtils" mode={mode} toggleMode={toggleMode} disabledLink="Disabled Link" />
+      <div className="container">
+        <Alert alert={alert} />
+        {/* <Switch> */}
+        {/* <Route path="/about"> */}
+        {/* <About /> */}
+        {/* </Route> */}
+        {/* <Route path="/"> */}
+        <TextForm heading="This is the heading" showAlert={showAlert} mode={mode} />
+        {/* </Route> */}
+        {/*  </Switch> */}
+      </div>
+      {/* </Router> */}
     </>
   );
 }
